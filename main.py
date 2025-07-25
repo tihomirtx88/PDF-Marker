@@ -14,6 +14,9 @@ for index, row in df.iterrows():
     pdf.set_font(family="Times", style="B", size=24);
     pdf.cell(w=0, h=12, text=row["Topic"], align="L", border=0,
              new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    for y in range(20, 298, 10):
+        pdf.line(10, y, 200, y);
+
     pdf.line(x1=10, y1=21, x2=200, y2=22);
 
     # Set footer
@@ -31,6 +34,8 @@ for index, row in df.iterrows():
         pdf.set_font(family="Times", style="I", size=8);
         pdf.set_text_color(180, 180, 180);
         pdf.cell(w=0, h=10, text=row["Topic"], align="R", border=0,
-                 new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+                 new_x=XPos.LMARGIN, new_y=YPos.NEXT);
+        for y in range(20, 298, 10):
+            pdf.line(10, y, 200, y);
 
 pdf.output("output.pdf");
