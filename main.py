@@ -12,4 +12,7 @@ for index, row in df.iterrows():
              new_x=XPos.LMARGIN, new_y=YPos.NEXT)
     pdf.line(x1=10, y1=21, x2=200, y2=22);
 
+    for i in range(row["Pages"] - 1):
+        pdf.add_page();
+
 pdf.output("output.pdf");
